@@ -1,0 +1,253 @@
+Jekyll
+======
+
+selva@vmsvr1-ubuntu:~$ sudo apt-get install ruby
+
+
+sudo gem install jekyll
+jekyll new portfolio
+https://github.com/DevTips/DevTips-Starter-Kit
+https://github.com/DevTips/Artists-Theme
+
+
+selva@vmsvr1-ubuntu:~$ ifconfig -a
+enp0s3    Link encap:Ethernet  HWaddr 08:00:27:cc:5a:d4
+          inet addr:10.0.2.15  Bcast:10.0.2.255  Mask:255.255.255.0
+          inet6 addr: fe80::a00:27ff:fecc:5ad4/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:134 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:98 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000
+          RX bytes:13552 (13.5 KB)  TX bytes:14062 (14.0 KB)
+
+enp0s8    Link encap:Ethernet  HWaddr 08:00:27:c4:bc:c7
+          BROADCAST MULTICAST  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+
+lo        Link encap:Local Loopback
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:160 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:160 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0
+          RX bytes:11840 (11.8 KB)  TX bytes:11840 (11.8 KB)
+
+selva@vmsvr1-ubuntu:~$ vi /etc/network/interfaces
+
+# the secondary network interface
+auto enp0s8
+iface enp0s8 inet static
+address 192.168.2.2
+netmask 255.255.255.0
+gateway 192.168.2.1
+
+:wq
+
+
+selva@vmsvr1-ubuntu:~$ sudo service networking restart
+
+selva@vmsvr1-ubuntu:~$ ifconfig
+enp0s3    Link encap:Ethernet  HWaddr 08:00:27:cc:5a:d4
+          inet addr:10.0.2.15  Bcast:10.0.2.255  Mask:255.255.255.0
+          inet6 addr: fe80::a00:27ff:fecc:5ad4/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:1517 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:1081 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000
+          RX bytes:123402 (123.4 KB)  TX bytes:163468 (163.4 KB)
+
+enp0s8    Link encap:Ethernet  HWaddr 08:00:27:c4:bc:c7
+          inet addr:192.168.2.2  Bcast:192.168.2.255  Mask:255.255.255.0
+          inet6 addr: fe80::a00:27ff:fec4:bcc7/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:3 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:8 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000
+          RX bytes:276 (276.0 B)  TX bytes:648 (648.0 B)
+
+lo        Link encap:Local Loopback
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:160 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:160 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0
+          RX bytes:11840 (11.8 KB)  TX bytes:11840 (11.8 KB)
+
+selva@vmsvr1-ubuntu:~$
+selva@vmsvr1-ubuntu:~$ sudo apt-get install ruby ruby-dev nodejs make gcc
+selva@vmsvr1-ubuntu:~$ sudo gem install jekyll
+
+selva@vmsvr1-ubuntu:~$ sudo apt-get install ruby
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following extra packages will be installed:
+  libjs-jquery libruby2.1 libyaml-0-2 ruby2.1 rubygems-integration
+Suggested packages:
+  javascript-common ri ruby-dev bundler
+The following NEW packages will be installed:
+  libjs-jquery libruby2.1 libyaml-0-2 ruby ruby2.1 rubygems-integration
+0 upgraded, 6 newly installed, 0 to remove and 3 not upgraded.
+Need to get 3,277 kB of archives.
+After this operation, 15.4 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://in.archive.ubuntu.com/ubuntu/ wily/main libyaml-0-2 amd64 0.1.6-3 [47.6 kB]
+Get:2 http://in.archive.ubuntu.com/ubuntu/ wily/main libjs-jquery all 1.7.2+dfsg-3ubuntu2 [69.0 kB]
+Get:3 http://in.archive.ubuntu.com/ubuntu/ wily/main rubygems-integration all 1.9 [4,866 B]
+Get:4 http://in.archive.ubuntu.com/ubuntu/ wily/main libruby2.1 amd64 2.1.5-4ubuntu1 [3,076 kB]
+Get:5 http://in.archive.ubuntu.com/ubuntu/ wily/main ruby2.1 amd64 2.1.5-4ubuntu1 [73.9 kB]
+Get:6 http://in.archive.ubuntu.com/ubuntu/ wily/main ruby all 1:2.1.5.1ubuntu1 [6,026 B]
+Fetched 3,277 kB in 1min 2s (52.4 kB/s)
+Selecting previously unselected package libyaml-0-2:amd64.
+(Reading database ... 59162 files and directories currently installed.)
+Preparing to unpack .../libyaml-0-2_0.1.6-3_amd64.deb ...
+Unpacking libyaml-0-2:amd64 (0.1.6-3) ...
+Selecting previously unselected package libjs-jquery.
+Preparing to unpack .../libjs-jquery_1.7.2+dfsg-3ubuntu2_all.deb ...
+Unpacking libjs-jquery (1.7.2+dfsg-3ubuntu2) ...
+Selecting previously unselected package rubygems-integration.
+Preparing to unpack .../rubygems-integration_1.9_all.deb ...
+Unpacking rubygems-integration (1.9) ...
+Selecting previously unselected package libruby2.1:amd64.
+Preparing to unpack .../libruby2.1_2.1.5-4ubuntu1_amd64.deb ...
+Unpacking libruby2.1:amd64 (2.1.5-4ubuntu1) ...
+Selecting previously unselected package ruby2.1.
+Preparing to unpack .../ruby2.1_2.1.5-4ubuntu1_amd64.deb ...
+Unpacking ruby2.1 (2.1.5-4ubuntu1) ...
+Selecting previously unselected package ruby.
+Preparing to unpack .../ruby_1%3a2.1.5.1ubuntu1_all.deb ...
+Unpacking ruby (1:2.1.5.1ubuntu1) ...
+Processing triggers for man-db (2.7.4-1) ...
+Setting up libyaml-0-2:amd64 (0.1.6-3) ...
+Setting up libjs-jquery (1.7.2+dfsg-3ubuntu2) ...
+Setting up rubygems-integration (1.9) ...
+Setting up libruby2.1:amd64 (2.1.5-4ubuntu1) ...
+Setting up ruby2.1 (2.1.5-4ubuntu1) ...
+Setting up ruby (1:2.1.5.1ubuntu1) ...
+Processing triggers for libc-bin (2.21-0ubuntu4.1) ...
+selva@vmsvr1-ubuntu:~$ gem list
+
+*** LOCAL GEMS ***
+
+bigdecimal (1.2.4)
+io-console (0.4.2)
+json (1.8.1)
+minitest (4.7.5)
+psych (2.0.5)
+rake (10.1.0)
+rdoc (4.1.0)
+test-unit (2.1.5.0)
+selva@vmsvr1-ubuntu:~$ sudo gem install jekyll
+
+
+ERROR:  While executing gem ... (Gem::RemoteFetcher::UnknownHostError)
+    no such name (https://api.rubygems.org/api/v1/dependencies?gems=mercenary)
+selva@vmsvr1-ubuntu:~$
+selva@vmsvr1-ubuntu:~$
+selva@vmsvr1-ubuntu:~$ sudo apt-get install ruby-dev
+ruby-dev                           ruby-devise-lastseenable           ruby-devise-two-factor
+ruby-devise                        ruby-devise-token-authenticatable
+selva@vmsvr1-ubuntu:~$ sudo apt-get install ruby-dev
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following extra packages will be installed:
+  libgmp-dev libgmpxx4ldbl ruby2.1-dev
+Suggested packages:
+  gmp-doc libgmp10-doc libmpfr-dev
+The following NEW packages will be installed:
+  libgmp-dev libgmpxx4ldbl ruby-dev ruby2.1-dev
+0 upgraded, 4 newly installed, 0 to remove and 3 not upgraded.
+Need to get 1,226 kB of archives.
+After this operation, 6,020 kB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://in.archive.ubuntu.com/ubuntu/ wily/main libgmpxx4ldbl amd64 2:6.0.0+dfsg-7 [9,160 B]
+Get:2 http://in.archive.ubuntu.com/ubuntu/ wily/main libgmp-dev amd64 2:6.0.0+dfsg-7 [316 kB]
+Get:3 http://in.archive.ubuntu.com/ubuntu/ wily/main ruby2.1-dev amd64 2.1.5-4ubuntu1 [896 kB]
+Get:4 http://in.archive.ubuntu.com/ubuntu/ wily/main ruby-dev all 1:2.1.5.1ubuntu1 [4,694 B]
+Fetched 1,226 kB in 18s (64.7 kB/s)
+Selecting previously unselected package libgmpxx4ldbl:amd64.
+(Reading database ... 60255 files and directories currently installed.)
+Preparing to unpack .../libgmpxx4ldbl_2%3a6.0.0+dfsg-7_amd64.deb ...
+Unpacking libgmpxx4ldbl:amd64 (2:6.0.0+dfsg-7) ...
+Selecting previously unselected package libgmp-dev:amd64.
+Preparing to unpack .../libgmp-dev_2%3a6.0.0+dfsg-7_amd64.deb ...
+Unpacking libgmp-dev:amd64 (2:6.0.0+dfsg-7) ...
+Selecting previously unselected package ruby2.1-dev:amd64.
+Preparing to unpack .../ruby2.1-dev_2.1.5-4ubuntu1_amd64.deb ...
+Unpacking ruby2.1-dev:amd64 (2.1.5-4ubuntu1) ...
+Selecting previously unselected package ruby-dev.
+Preparing to unpack .../ruby-dev_1%3a2.1.5.1ubuntu1_all.deb ...
+Unpacking ruby-dev (1:2.1.5.1ubuntu1) ...
+Setting up libgmpxx4ldbl:amd64 (2:6.0.0+dfsg-7) ...
+Setting up libgmp-dev:amd64 (2:6.0.0+dfsg-7) ...
+Setting up ruby2.1-dev:amd64 (2.1.5-4ubuntu1) ...
+Setting up ruby-dev (1:2.1.5.1ubuntu1) ...
+Processing triggers for libc-bin (2.21-0ubuntu4.1) ...
+selva@vmsvr1-ubuntu:~$ sudo gem install jekyll
+Fetching: liquid-3.0.6.gem ( 75%)^CERROR:  Interrupted
+selva@vmsvr1-ubuntu:~$ sudo gem install jekyll
+^CERROR:  Interrupted
+selva@vmsvr1-ubuntu:~$ sudo apt-get install nodejs
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following extra packages will be installed:
+  libc-ares2 libv8-3.14.5
+The following NEW packages will be installed:
+  libc-ares2 libv8-3.14.5 nodejs
+0 upgraded, 3 newly installed, 0 to remove and 3 not upgraded.
+Need to get 1,912 kB of archives.
+After this operation, 7,538 kB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://in.archive.ubuntu.com/ubuntu/ wily/main libc-ares2 amd64 1.10.0-2 [38.5 kB]
+Get:2 http://in.archive.ubuntu.com/ubuntu/ wily/universe libv8-3.14.5 amd64 3.14.5.8-5ubuntu2 [1,189 kB]
+Get:3 http://in.archive.ubuntu.com/ubuntu/ wily/universe nodejs amd64 0.10.25~dfsg2-2ubuntu1 [684 kB]
+Fetched 1,912 kB in 1min 11s (26.6 kB/s)
+Selecting previously unselected package libc-ares2:amd64.
+(Reading database ... 60315 files and directories currently installed.)
+Preparing to unpack .../libc-ares2_1.10.0-2_amd64.deb ...
+Unpacking libc-ares2:amd64 (1.10.0-2) ...
+Selecting previously unselected package libv8-3.14.5.
+Preparing to unpack .../libv8-3.14.5_3.14.5.8-5ubuntu2_amd64.deb ...
+Unpacking libv8-3.14.5 (3.14.5.8-5ubuntu2) ...
+Selecting previously unselected package nodejs.
+Preparing to unpack .../nodejs_0.10.25~dfsg2-2ubuntu1_amd64.deb ...
+Unpacking nodejs (0.10.25~dfsg2-2ubuntu1) ...
+Processing triggers for man-db (2.7.4-1) ...
+Setting up libc-ares2:amd64 (1.10.0-2) ...
+Setting up libv8-3.14.5 (3.14.5.8-5ubuntu2) ...
+Setting up nodejs (0.10.25~dfsg2-2ubuntu1) ...
+update-alternatives: using /usr/bin/nodejs to provide /usr/bin/js (js) in auto mode
+Processing triggers for libc-bin (2.21-0ubuntu4.1) ...
+selva@vmsvr1-ubuntu:~$ sudo gem install jekyll
+Fetching: liquid-3.0.6.gem (100%)
+Successfully installed liquid-3.0.6
+Fetching: kramdown-1.10.0.gem (100%)
+Successfully installed kramdown-1.10.0
+Fetching: mercenary-0.3.6.gem (100%)
+Successfully installed mercenary-0.3.6
+Fetching: safe_yaml-1.0.4.gem (100%)
+Successfully installed safe_yaml-1.0.4
+ERROR:  While executing gem ... (Gem::RemoteFetcher::UnknownHostError)
+    no such name (https://api.rubygems.org/gems/colorator-0.1.gem)
+selva@vmsvr1-ubuntu:~$ jekyll -v
+The program 'jekyll' is currently not installed. You can install it by typing:
+sudo apt-get install jekyll
+selva@vmsvr1-ubuntu:~$ sudo gem install jekyll
+ERROR:  While executing gem ... (Gem::RemoteFetcher::UnknownHostError)
+    no such name (https://api.rubygems.org/api/v1/dependencies?gems=jekyll-sass-converter)
+selva@vmsvr1-ubuntu:~$ gem install rack-test
+^CERROR:  Interrupted
+selva@vmsvr1-ubuntu:~$ sudo gem install jekyll-sass-converter
+
+
+
+
+======================================================
+sudo apt-get install samba

@@ -2,12 +2,12 @@
 permalink:           pretty
 
 # Setup
-title:               Poole
-tagline:             The Jekyll Butler
-url:                 http://getpoole.com
+title:               Selva
+tagline:             ~$ sudo rm -rf .
+url:                 http://selva.net.in
 paginate:            1
 baseurl:             ""
-
+host:				 0.0.0.0
 # Assets
 #
 # We specify the directory for Jekyll so we can use @imports.
@@ -17,14 +17,14 @@ sass:
 
 # About/contact
 author:
-  name:              Mark Otto
+  name:              Selva
   url:               https://twitter.com/mdo
-  email:             markdotto@gmail.com
+  email:             selva.home@gmail.com
 
 # Custom vars
-version:             2.0.0
+version:             1.0.0
 github:
-  repo:              https://github.com/poole/poole
+  repo:              https://github.com/rselvA
 
 # Gems
 gems:
