@@ -1,6 +1,7 @@
 ---
 layout: post
-title: Ubuntu Server 15.10 (Wily Werewolf) Install - Oracle VM VirtualBox
+title: How to install Ubuntu Server 15.10 (Wily Werewolf) using Oracle VM VirtualBox
+description: Install Ubuntu server using Oracle VM Virtualbox
 ---
 
 *Let's examine how to install Ubuntu Server Operating System on a Oracle VM VirtualBox instance with Windows 7 as the host operating system*.
