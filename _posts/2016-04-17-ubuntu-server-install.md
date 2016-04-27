@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How to install Ubuntu Server on VirtualBox vitual machine
+title: How to install Ubuntu Server on VirtualBox virtual machine
 description: Install Ubuntu server using Oracle VM Virtualbox 
 keywords: Ubuntu Server, Linux, Install, Wily Werewolf, Windows 7, VirtualBox, NAT, port forward
 categories: Linux 
