@@ -115,4 +115,4 @@ Now we can use putty or a bash shell to connect
 	Last login: Mon Apr 18 23:38:00 2016 from 192.168.2.1
 	selva@vmsvr1-ubuntu:~$
 
-I hope this tutorial will help installing Ubuntu server for newbies starting with Linux, where a physical Linux box is not availble. A virtual machine in contrast is a great resouce to learn linux and break!
+I hope this tutorial will help installing Ubuntu server for newbies starting with Linux, where a physical Linux box is not availble. A virtual machine in contrast is a great resource to learn linux and break!
