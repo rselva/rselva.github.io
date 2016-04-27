@@ -1,14 +1,20 @@
 ---
 layout: post
-title: How to install Ubuntu Server 15.10 (Wily Werewolf) using Oracle VM VirtualBox
-description: Install Ubuntu server using Oracle VM Virtualbox
+title: How to install Ubuntu Server on VirtualBox vitual machine
+description: Install Ubuntu server using Oracle VM Virtualbox 
+keywords: Ubuntu Server, Linux, Install, Wily Werewolf, Windows 7, VirtualBox, NAT, port forward
+categories: Linux 
 ---
 
-*Let's examine how to install Ubuntu Server Operating System on a Oracle VM VirtualBox instance with Windows 7 as the host operating system*.
+*This step by step guide explains*
+
+* Basic server intallation 
+* Enable networking and internet access using NAT feature
+* Enable ssh access from host via port forwarding feature
 
 -----
 
-### Basic Server installation
+### Basic server installation
 
 Head to [www.ubuntu.com](http://www.ubuntu.com/download/server), and download the bootable ISO image file (~647MB). Only 64bit version is available so you need to have a system with 64bit architecture.
 
