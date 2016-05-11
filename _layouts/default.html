@@ -16,7 +16,7 @@
       <main>
         {{ content }}
       </main>
-
+	<div id="gigyashare"></div>
       {% include comments.html %}
 
       <footer class="footer">
@@ -47,7 +47,7 @@ var act = new gigya.socialize.UserAction();
 var share_params=
 {
 	userAction: act
-	,cid: ''
+	,cid: 'gigyashare'
 }
 gigya.socialize.showShareUI(share_params);
 </script>
